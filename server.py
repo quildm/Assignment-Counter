@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 app = Flask(__name__)
 app.secret_key = 'very secret'
-
+app.count = 0
 
 @app.route('/')
 def counter():
@@ -13,7 +13,6 @@ def counter():
 
 @app.route('/add2', methods=['POST'])
 def increment():
-    if request.form['submit'] == 'Do Something':
      print ('hello again')
      session['counter'] += 1
      return redirect('/')
